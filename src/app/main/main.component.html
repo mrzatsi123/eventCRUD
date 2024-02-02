@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center mt-5">Events</h1>
+  <div id="first" class="d-flex justify-content-between mt-3">
+    <div><h3>Popular events</h3></div>
+    <div>
+      <a class="custom-link" routerLink="/add">+ Create event</a>
+    </div>
+
+
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-3 mt-5" *ngFor="let item of events">
+      <div class="card h-100" [routerLink]="[item.type === 'physical' ? 'detailsPhysical' : 'detailsVirtual',item._id]">
+        <div class="card-image p-1">
+          <img [src]="'http://127.0.0.1:3000/getimage/'+item.image" alt="" class="w-100" style="height: 200px; object-fit: cover;" />
+        </div>
+        <div class="card-body">
+          <h1>{{item.name}}</h1>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

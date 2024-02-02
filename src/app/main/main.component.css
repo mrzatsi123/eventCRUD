@@ -1,0 +1,16 @@
+#first {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.custom-link {
+  color: #007bff; /* Bootstrap blue color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make text bold */
+  font-size: 1.5rem; /* Adjust font size */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.custom-link:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}

@@ -1,0 +1,15 @@
+<div class="container-fluid d-flex align-items-center justify-content-center vh-100 blur-background">
+  <div class="card p-4 border border-secondary" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="appName" style="font-size: 20px;">Application Name</label>
+        <input type="text" id="appName" name="appName" class="form-control form-control-lg" [(ngModel)]="event.appName">
+      </div>
+      <div class="form-group">
+        <label for="appLink" style="font-size: 20px;">Application Link</label>
+        <input type="text" id="appLink" name="appLink" class="form-control form-control-lg" [(ngModel)]="event.appLink">
+      </div>
+      <button type="submit" class="btn btn-primary mt-5 btn-lg">Submit</button>
+    </form>
+  </div>
+</div>

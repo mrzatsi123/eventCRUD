@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-md-6">
+      <form (ngSubmit)="onSubmit()" class="bg-white p-4 rounded shadow">
+        <div class="form-group text-center">
+          <strong><p class="text-center ">+ Add Cover photo</p></strong>
+          <label id="coverLabel" for="coverPhoto">+</label>
+          <input (change)="selectImage($event)" type="file" id="coverPhoto" name="coverPhoto" class="form-control-file mx-auto" required>
+          <div *ngIf="!image" class="text-danger mt-0">Event Image is required</div>
+        </div>
+        <div>
+          <h2>Required</h2>
+          <small class="text-muted pt-0">Be as descriptive as possible</small>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="eventName">Event Name</label>
+          <input type="text" id="eventName" name="eventName" class="form-control" [(ngModel)]="event.name" required>
+          <div *ngIf="!event.name" class="text-danger">Event Name is required</div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <input type="date" id="startDate" name="startDate" class="form-control" [(ngModel)]="event.startDate" required>
+              <div *ngIf="!event.startDate" class="text-danger">Start Date is required</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="startTime">Start Time</label>
+              <input type="time" id="startTime" name="startTime" class="form-control" [(ngModel)]="event.startTime" required>
+              <div *ngIf="!event.startTime" class="text-danger">Start Time is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="category">Category</label>
+          <input type="text" id="category" name="category" class="form-control" [(ngModel)]="event.category" required>
+          <div *ngIf="!event.category" class="text-danger">Category is required</div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="description">Event Description</label>
+          <textarea id="description" name="description" class="form-control" rows="2" [(ngModel)]="event.description" required></textarea>
+          <div *ngIf="!event.description" class="text-danger">Event Description is required</div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="eventType">Event Type</label>
+          <select id="eventType" name="eventType" class="form-control" [(ngModel)]="event.type" required>
+            <option value="physical">Physical</option>
+            <option value="virtual">Virtual</option>
+          </select>
+          <div *ngIf="!event.type" class="text-danger">Event Type is required</div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!event.name || !event.startDate || !event.startTime || !event.category || !event.description || !event.type" >Next</button>
+      </form>
+    </div>
+  </div>
+</div>

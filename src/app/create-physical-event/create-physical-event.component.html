@@ -1,0 +1,32 @@
+<div class="container-fluid d-flex align-items-center justify-content-center vh-100 blur-background">
+  <div class="card p-4 border border-secondary" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="inUni" style="font-size: 18px;">Is the event in the university?</label>
+        <select id="inUni" name="inUni" class="form-control form-control-lg" [(ngModel)]="event.inUni">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div>
+        <div class="form-group">
+          <label for="state" style="font-size: 18px;">State</label>
+          <input type="text" id="state" name="state" class="form-control form-control-lg" [(ngModel)]="event.state">
+        </div>
+        <div class="form-group">
+          <label for="place" style="font-size: 18px;">Place Name</label>
+          <input type="text" id="place" name="place" class="form-control form-control-lg" [(ngModel)]="event.place">
+        </div>
+        <div class="form-group">
+          <label for="locationLink" style="font-size: 18px;">Location Link</label>
+          <input type="text" id="locationLink" name="locationLink" class="form-control form-control-lg" [(ngModel)]="event.locationLink">
+        </div>
+        <div class="form-group">
+          <label for="locationDescription" style="font-size: 18px;">Location Description</label>
+          <textarea id="locationDescription" name="locationDescription" class="form-control form-control-lg" rows="4" [(ngModel)]="event.locationDescription"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-5 btn-lg">Add Event</button>
+    </form>
+  </div>
+</div>

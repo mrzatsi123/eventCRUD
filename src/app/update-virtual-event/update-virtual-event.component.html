@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Update Event</h2>
+          <form>
+
+            <div class="form-group">
+              <label for="eventImage">Image</label>
+              <input type="file" id="eventImage" name="eventImage" class="form-control" (change)="selectImage($event)">
+            </div>
+            <div class="form-group">
+              <label for="eventName">Event Name</label>
+              <input type="text" id="eventName" name="eventName" class="form-control" [(ngModel)]="event.name">
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="startDate">Start Date</label>
+              <input type="date" id="startDate" name="startDate" class="form-control" [(ngModel)]="event.startDate" required>
+              <div *ngIf="!event.startDate" class="text-danger">Start Date is required</div>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="startTime">Start Time</label>
+              <input type="time" id="startTime" name="startTime" class="form-control" [(ngModel)]="event.startTime" required>
+              <div *ngIf="!event.startTime" class="text-danger">Start Time is required</div>
+            </div>
+
+            <div class="form-group">
+              <label for="eventCategory">Category</label>
+              <input type="text" id="eventCategory" name="eventCategory" class="form-control" [(ngModel)]="event.category">
+            </div>
+            <div class="form-group">
+              <label for="eventDescription">Event description</label>
+              <input type="text" id="eventDescription" name="eventDescription" class="form-control" [(ngModel)]="event.description">
+            </div>
+            <div class="form-group">
+              <label for="appName">Application Name</label>
+              <input type="text" id="appName" name="appName" class="form-control" [(ngModel)]="event.appName">
+            </div>
+            <div class="form-group">
+              <label for="appLink">Link</label>
+              <input type="text" id="appLink" name="appLink" class="form-control" [(ngModel)]="event.appLink">
+            </div>
+
+            <button type="submit" (click)="update()" class="btn btn-primary mt-3">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

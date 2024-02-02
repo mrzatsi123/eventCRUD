@@ -1,0 +1,31 @@
+
+#coverPhoto {
+  display : none;
+
+
+}
+#coverLabel {
+
+  padding: 10px 0;
+  height: 200px; /* Adjust the height as needed */
+  width: 100%;
+  border-radius: 6px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #999;
+  text-align: center; /* Center the content vertically */
+  color: rgb(255, 255, 255);
+  font-size: 500%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/011/124/884/non_2x/colorful-geometric-background-minimal-cover-template-design-for-web-modern-abstract-background-with-geometric-shapes-and-lines-vector.jpg);
+  background-size:cover;
+}
+
+#coverLabel:hover {
+  color: #de0611;
+  border: 1px dashed #de0611;
+}
+

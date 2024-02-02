@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="blur-background">
+    <div class="card mx-auto" style="width: 35%;">
+      <div class="card">
+        <div class="card-img-container">
+          <img
+            class="card-img-top img-fluid"
+            [src]="'http://127.0.0.1:3000/getimage/' + event.image"
+            alt="Event Image"
+          />
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <strong>
+              <p class="card-text text-center">
+                {{ event.startDate }} AT {{ event.startTime }}
+              </p></strong
+            >
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="card-title">{{ event.name }}</h2>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <p class="card-text text-capitalize">
+                <strong>Category:</strong> {{event.category}}
+              </p>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <p class="card-text text-capitalize"><strong>State:</strong> {{ event.state }}</p>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <p class="card-text text-capitalize"><strong>Type:</strong> {{ event.type }}</p>
+            </div>
+            <div class="col-6">
+              <p class="card-text text-capitalize">
+                <strong>Place Name:</strong> {{ event.place }}
+              </p>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-6">
+              <p class="card-text">
+                <strong>Event Description:</strong><br/>
+                {{ event.description }}
+              </p>
+            </div>
+
+            <div class="col-6">
+              <p class="card-text">
+                <strong>Location Link:</strong><br>
+                <a href="{{ event.locationLink }}" target="_blank">
+                {{event.locationLink}}</a>
+              </p>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <p class="card-text text-muted">
+                Organized by Club name<br>
+              </p>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="btn-group btn-group-justified">
+              <a routerLink="/" class="btn btn-primary">Go Back</a>
+              <a
+                class="btn btn-success"
+                [routerLink]="['/updatePhysical', event._id]"
+                >Update</a
+              >
+              <a (click)="delete(event._id)" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
